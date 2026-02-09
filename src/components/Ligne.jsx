@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 function Ligne({ module, onDelete }) {
@@ -10,10 +9,15 @@ function Ligne({ module, onDelete }) {
       <td>{module.masse_horaire}</td>
       <td>{module.filiere}</td>
       <td>
-        <Link to={`/modules/${module.id}`} style={{ marginRight: "10px" }}>
+        <Link to={`/modules/${module.id}`} className="btn btn-sm btn-info me-2">
           Détails
         </Link>
-        <button onClick={() => onDelete(module.id)}>Delete</button>
+        <button 
+          onClick={() => onDelete(module.id)}
+          className="btn btn-sm btn-danger"
+        >
+          Supprimer
+        </button>
       </td>
     </tr>
   );
